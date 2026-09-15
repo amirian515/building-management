@@ -1,9 +1,26 @@
 import { useState, type FormEvent } from "react"
+import { useNavigate } from "react-router-dom"
 
 function ResidentLogin() {
+    const navigate = useNavigate()
     const[unitNumber , setUnitNumber]=useState("")
     const[password , setPassword]=useState("")
     const [error, setError] = useState("")
+    const login = (unitNumber :string, password :string) => {
+      if(unitNumber === "702" && password === "1234"){
+        console.log("ورود با موفقیت انجام شد")
+        console.log(unitNumber)
+        console.log(password)
+        setError("")
+        navigate("/resident/dashboard")
+
+      }else{
+        console.log("شماره واحد یا رمز عبور صحیح نیست")
+        setError("شماره واحد یا رمز عبور صحیح نیست")
+      }
+
+
+    }
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         if(unitNumber===""){
@@ -14,7 +31,8 @@ function ResidentLogin() {
             setError("رمز خود را وارد کنید")
             return
         }
-setError("")
+      setError("")
+      login(unitNumber, password)
 
 }
   return (
@@ -69,10 +87,10 @@ className="space-y-5">
 )}
   <button
   type="submit"
-  className="w-full border rounded-lg px-4 py-3 bg-zinc-900 text-white active:bg-zinc-700">ورود</button>
+  className="w-full border rounded-lg px-4 py-3 bg-zinc-900 text-white active:bg-zinc-700 active:scale-105 transition duration-175 hover:scale-105 transition duration-175 ">ورود</button>
   <button
   type="button"
-  className="text-sm text-zinc-600 active:text-zinc-800">رمز عبور را فراموش کردم</button>
+  className="text-sm text-zinc-600 active:text-zinc-800 ">رمز عبور را فراموش کردم</button>
 </form>
 
     </div>
