@@ -37,9 +37,8 @@ function ResidentLogin() {
 }
   return (
     <div className=" min-h-screen flex justify-center items-center">
-    <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg text-center">
-      <h1 className="text-zinc-900 text-3xl mb-8 font-bold">مدیریت ساختمان</h1>
-      <p className="text-zinc-800 text-xl mb-5">به پنل مدیریت ساختمان خوش آمدید</p>
+    <div className=" m-10 max-w-md bg-background p-8 rounded-2xl shadow-lg text-center">
+      <h1 className="text-text text-xl  mb-10 font-bold ">پنل اطلاع رسانی ساختمان</h1>
 <form
 onSubmit={handleSubmit}
 className="space-y-5">
@@ -87,7 +86,7 @@ className="space-y-5">
 )}
   <button
   type="submit"
-  className="w-full border rounded-lg px-4 py-3 bg-zinc-900 text-white active:bg-zinc-700 active:scale-105 transition duration-175 hover:scale-105 transition duration-175 ">ورود</button>
+  className="w-full border rounded-lg px-4 py-3 bg-primary text-white active:bg-zinc-700 active:scale-105 transition duration-175 hover:scale-105 transition duration-175 ">ورود</button>
   <button
   type="button"
   className="text-sm text-zinc-600 active:text-zinc-800 ">رمز عبور را فراموش کردم</button>
