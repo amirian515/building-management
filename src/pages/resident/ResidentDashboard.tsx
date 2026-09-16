@@ -1,5 +1,6 @@
 import Header from "../../components/Header"
 import PaymentHistoryCard from "../../components/PaymentHistoryCard"
+import BillCard from "../../components/BillCard"
 import FinancialStatusCard from "../../components/FinancialStatusCard"
 function ResidentDashboard (){
 
@@ -8,6 +9,7 @@ function ResidentDashboard (){
             <Header />
             <FinancialStatusCard/>
             <PaymentHistoryCard />
+            <BillCard />
         </section>
 
 

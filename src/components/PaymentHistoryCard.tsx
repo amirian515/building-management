@@ -29,7 +29,6 @@ const payments =[
                             <p>تومان</p>
                             <p className="text-danger">{payment.amount.toLocaleString()}</p>
                         </span>
-                        
                         <p className="w-22">{payment.title}</p>
                     </div>
                 )}
