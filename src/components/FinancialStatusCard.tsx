@@ -21,7 +21,7 @@ function FinancialStatusCard (){
         )
      },0)
     return(
-        <section className="bg-background min-h-screen space-y-6">
+
             <div className="mx-5 px-5 pb-5  border-border bg-surface rounded-xl shadow-md">
                 <h1 className="text-right border-b border-border py-5 text-text font-semibold text-base">صورت وضعیت مالی </h1>
                 <div className="flex flex-col justify-between gap-1 text-sm py-2" >
@@ -54,7 +54,7 @@ function FinancialStatusCard (){
 
 
 
-        </section>
+
 
 
     )
