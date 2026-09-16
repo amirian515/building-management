@@ -27,20 +27,20 @@ function ResidentDashboard (){
             <h1 className="font-semibold text-white">پنل مالی واحد 702</h1>
             </header>
             <div className="mx-5 px-5 pb-5  border-border bg-surface rounded-xl shadow-md">
-                <h1 className="text-right border-b border-border py-5 text-text font-semibold text-base">صورت وضعیت مالی واحد</h1>
+                <h1 className="text-right border-b border-border py-5 text-text font-semibold text-base">صورت وضعیت مالی </h1>
                 <div className="flex flex-col justify-between gap-1 text-sm py-2" >
                     {debts.map((debt)=>{
                     return(
                     <div
                     key={debt.id}
-                    className=" flex justify-between py-3 border-b border-border last:border-b-0 ">
+                    className=" flex justify-between py-3 border-b border-border last:border-b-0  text-right">
                         <p>{debt.date}</p>
                         <span className="flex gap-1">
                             <p>تومان</p>
-                            <p className="text-danger">{debt.amount.toLocaleString()}</p>
+                            <p className="text-danger ">{debt.amount.toLocaleString()}</p>
 
                         </span>
-                        <p className="">{debt.title}</p>
+                        <p className="w-32 ">{debt.title}</p>
                     </div>)
                     })}
 
