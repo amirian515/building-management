@@ -2,6 +2,7 @@ import Header from "../../components/Header"
 import PaymentHistoryCard from "../../components/PaymentHistoryCard"
 import BillCard from "../../components/BillCard"
 import FinancialStatusCard from "../../components/FinancialStatusCard"
+import ExpensesCard from "../../components/ExpensesCard"
 function ResidentDashboard (){
 
     return(
@@ -10,6 +11,7 @@ function ResidentDashboard (){
             <FinancialStatusCard/>
             <PaymentHistoryCard />
             <BillCard />
+            <ExpensesCard />
         </section>
 
 
