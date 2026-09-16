@@ -33,8 +33,11 @@ function BillCard(){
                                 <p>تومان</p>
                                 <p className="text-danger">{bill.amount.toLocaleString()}</p>
                             </span>
-                            <p className="">{bill.status}</p>
-                            <p className="w-32">{bill.title}</p>
+                            <span>
+                            <p className="mb-1">{bill.title}</p>
+                            <p className="text-zinc-600 text-xs">{bill.status}</p>
+                            </span>
+
                         </div>
                     )
                 })}

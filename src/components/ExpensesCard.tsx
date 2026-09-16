@@ -16,7 +16,7 @@ function ExpensesCard (){
 
 ]
     return(
-        <div className="mx-5 px-5 pt-5 text-right border-border bg-surface shadow-md rounded-xl">
+        <div className="mx-5 px-5 text-right border-border bg-surface shadow-md rounded-xl">
             <h1 className="text-text font-semibold text-base py-5 border-b border-border"> هزینه های جاری </h1>
             <div className="flex flex-col justify-between gap-1 text-sm py-2">
                 {expenses.map((payment)=>{
