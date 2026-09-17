@@ -6,7 +6,7 @@ import ExpensesCard from "../../components/ExpensesCard"
 function ResidentDashboard (){
 
     return(
-        <section className="bg-background min-h-screen space-y-6  flex flex-col">
+        <section className="bg-background min-h-screen space-y-6  flex flex-col pb-6">
             <Header />
             <FinancialStatusCard/>
             <PaymentHistoryCard />

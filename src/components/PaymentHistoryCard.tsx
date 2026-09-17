@@ -1,18 +1,7 @@
+import { payments } from "../data/residentData"
 function PaymentHistoryCard (){
-const payments =[
-    {
-        id:1,
-        title:"شارژ مرداد",
-        amount :150000,
-        date : "1405/05/30"
-    },
-        {
-        id:2,
-        title:"شارژ تیر",
-        amount :150000,
-        date : "1405/04/30"
-    }
-]
+
+
     return(
 
 
@@ -27,7 +16,7 @@ const payments =[
                         <p className="text-xs">{payment.date}</p>
                         <span className=" flex gap-1">
                             <p>تومان</p>
-                            <p className="text-danger">{payment.amount.toLocaleString()}</p>
+                            <p className="text-warning">{payment.amount.toLocaleString()}</p>
                         </span>
                         <p className="w-22">{payment.title}</p>
                     </div>

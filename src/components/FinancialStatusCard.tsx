@@ -1,20 +1,6 @@
+import { debts } from "../data/residentData"
 function FinancialStatusCard (){
-     const debts =[{
-        id:1,
-        title:"شارژ شهریور",
-        amount:150000
-        ,date:"1405/07/12"},
-        {
-        id:2,
-        title:"شارژ مرداد",
-        amount:150000
-        ,date:"1405/07/12"},
-        {
-        id:3,
-        title:" هزینه آسانسور",
-        amount:150000
-        ,date:"1405/07/12"}
-     ]
+
      const totalDebt = debts.reduce((acc ,item) =>{
         return(
             acc+item.amount

@@ -1,22 +1,7 @@
 
+import { bills } from "../data/residentData"
 function BillCard(){
-    const bills =[
-        {id:1,
-        title:" آب",
-        amount:20000000,
-        status:"پرداخت شده"
-        },
-        {id:2,
-        title:" برق موتور خانه",
-        amount:9152000,
-        status:"پرداخت شده"
-},
-        {id:3,
-        title:" گاز موتور خانه",
-        amount:5600000,
-        status:"پرداخت شده"
-},
-    ]
+
     const totalBills = bills.reduce((acc ,item)=>{
         return( acc+item.amount)
     },0)
@@ -31,11 +16,11 @@ function BillCard(){
                         className=" border-b border-border py-3 text-right last:border-b-0 flex justify-between">
                             <span className="flex gap-1">
                                 <p>تومان</p>
-                                <p className="text-danger">{bill.amount.toLocaleString()}</p>
+                                <p className="text-warning">{bill.amount.toLocaleString()}</p>
                             </span>
                             <span>
                             <p className="mb-1">{bill.title}</p>
-                            <p className="text-zinc-600 text-xs">{bill.status}</p>
+                            <p className="text-success text-xs">{bill.status}</p>
                             </span>
 
                         </div>
@@ -45,7 +30,7 @@ function BillCard(){
              <div className="border-t border-border flex justify-between items-center pt-4 mt+2">
                 <span className="flex gap-1 font-semibold">
                     <p> تومان</p>
-                    <p className="text-danger">{totalBills.toLocaleString()}</p>
+                    <p className="text-warning">{totalBills.toLocaleString()}</p>
                 </span>
                 <h1 className="font-semibold text-text">جمع قبض ها</h1>
              </div>
