@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ResidentLogin from "./pages/resident/ResidentLogin"
 import ResidentDashboard from "./pages/resident/ResidentDashboard"
+import AdminLogin from "./pages/resident/AdminLogin"
 
 function App() {
   return (
@@ -13,6 +14,13 @@ function App() {
         <Route
         path="/resident/dashboard"
         element={<ResidentDashboard/>}/>
+      </Routes>
+      <Routes>
+        <Route
+          path="/Admin/login"
+          element={<AdminLogin/>}
+        />
+
       </Routes>
     </BrowserRouter>
   )

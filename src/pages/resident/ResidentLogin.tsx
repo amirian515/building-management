@@ -37,7 +37,7 @@ function ResidentLogin() {
 }
   return (
     <div className=" min-h-screen flex justify-center items-center">
-    <div className=" m-10 max-w-md bg-background p-8 rounded-2xl shadow-lg text-center">
+    <div className=" m-10 max-w-md bg-surface p-8 rounded-2xl shadow-lg text-center">
       <h1 className="text-text text-xl  mb-10 font-bold ">پنل اطلاع رسانی ساختمان</h1>
 <form
 onSubmit={handleSubmit}
