@@ -26,7 +26,7 @@ function AdminLogin (){
             alert("ورود با موفقیت انجام شد")
             console.log("ورود با موفقیت انجام شد")
             setError("")
-            navigate("/َAdmin/dashboard")
+            navigate("/admin/dashboard")
         }
         else{
         console.log("نام کاربری یا رمز عبور صحیح نیست")
