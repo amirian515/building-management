@@ -7,9 +7,9 @@ function AdminUnits() {
                 <input className="p-3 border border-black rounded-xl text-right w-full"
                 placeholder=" ... جستجوی واحد "
                 type="text" />
-            <div className=" flex justify-center items-center gap-5">
-            <button className="bg-sky-600 p-2 rounded-xl text-sm" >افزودن واحد </button>
-            <button className="bg-red-600 p-2 rounded-xl text-sm" >نمایش بدهکاران</button>
+            <div className=" flex justify-center items-center gap-2">
+            <button className="bg-sky-600 p-2 rounded-md text-sm w-1/2 text-white" >افزودن واحد </button>
+            <button className="bg-red-600 p-2 rounded-md text-sm w-1/2 text-white" >نمایش بدهکاران</button>
             </div>
              <UnitCard/>
         </div>
