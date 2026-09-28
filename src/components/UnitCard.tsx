@@ -1,6 +1,10 @@
  import { units } from "../data/residentData"
  import { payments } from "../data/residentData"
+ import { useState } from "react"
 function UnitCard(){
+
+    const [showPayment ,setShowPayment]=useState(false)
+
     return(
         <div>
             {units.map((unit)=>{
@@ -12,7 +16,7 @@ function UnitCard(){
                             <div className="flex flex-col gap-0.5 ">
 
                             <button>✏️</button>
-                            <button>📜</button>
+                            <button onClick={()=>setShowPayment(!showPayment)}>📜</button>
 
                             </div>
 
@@ -54,6 +58,29 @@ function UnitCard(){
 
                 )
             })}
+            {showPayment && (
+                <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex flex-col justify-center items-center">
+                    <div className="w-2/3 space-y-3">
+                        <div className="flex justify-between items-center">
+                            <button  className="text-3xl active: text-red-600" onClick={()=>setShowPayment(!showPayment)}>×</button>
+                           <h2 className="font-semibold">تاریخچه پرداخت</h2>
+                        </div>
+                        <div className="bg-surface rounded-md p-5">
+                            {payments.map((payment)=>{
+                                return(
+                                    <div className="flex justify-between items-center py-2 border-b border-border last:border-0">
+                                        <p className="text-xs">{payment.date}</p>
+                                        <p>{payment.amount.toLocaleString()}</p>
+                                        <h2 className="w-22 text-right">{payment.title}</h2>
+                                    </div>
+                                )
+                            })}
+                        </div>
+
+
+                    </div>
+                </div>
+            )}
         </div>
 
     )
