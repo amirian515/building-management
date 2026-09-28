@@ -22,3 +22,10 @@
     amount:number,
     date:string
 }
+  export type unitType ={
+    id:number,
+    name:string,
+    unitNumber:number,
+    status:string,
+    debt:number
+}

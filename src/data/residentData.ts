@@ -2,6 +2,7 @@ import type { debtsType } from "../types/resident"
 import type { billsType } from "../types/resident"
 import type { paymentsType } from "../types/resident"
 import type { expensesType } from "../types/resident"
+import type { unitType } from "../types/resident"
 
    export const debts:debtsType[] =[{
         id:1,
@@ -62,4 +63,26 @@ import type { expensesType } from "../types/resident"
         date:"1405/07/30"
    }
 
+]
+export const units :unitType[]=[{
+    id:1,
+    name:"صادقی",
+    unitNumber:702,
+    status:"تسویه",
+    debt:0
+   },
+   {
+    id:2,
+    name:"رزاقی",
+    unitNumber:102,
+    status:"بدهکار",
+    debt:1000000
+   },
+   {
+    id:3,
+    name:"محمدی",
+    unitNumber:403,
+    status:"بدهکار",
+    debt:2500000
+   }
 ]
