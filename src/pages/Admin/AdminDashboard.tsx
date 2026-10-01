@@ -1,7 +1,6 @@
 function AdminDashboard (){
     return(
         <section className="space-y-5 px-5">
-            <h1 className=" text-right font-semibold m-5 ">سلام مدیر ساختمان</h1>
             <h2 className="text-center font-semibold m-5">خلاصه وضعیت مالی ساختمان</h2>
             <div className="flex gap-3">
                 <div className="bg-surface border-border shadow-md w-1/2 text-center rounded-lg py-4 flex flex-col gap-2">
@@ -23,11 +22,10 @@ function AdminDashboard (){
                     <p>5.100.000</p>
                 </div>
             </div>
-             <h2 className="text-center font-semibold">موجودی ساختمان</h2>
             <div className="bg-surface border-border shadow-md w-full text-center rounded-lg p-4 flex flex-col gap-2">
                <div className="flex justify-between items-center">
                 <p>1,500,000 تومان</p>
-                <p></p>
+                <h2 className="text-center font-semibold">موجودی ساختمان</h2>
                </div>
 
             </div>

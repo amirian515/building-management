@@ -1,14 +1,29 @@
  import { units } from "../data/residentData"
  import { payments } from "../data/residentData"
  import { useState } from "react"
+ import type { unitType } from "../types/resident"
+import { debts } from "../data/residentData"
+import PaymentHistoryModal from "./PaymentHistoryModal"
+import DebtRegisterModal from "./DebtRegisterModal"
+import EditFormModel from "./EditFormModel"
 function UnitCard(){
 
     const [showPayment ,setShowPayment]=useState(false)
     const [showEditForm , setEditForm] =useState(false)
+    const [showDebtReg ,setDebtReg]=useState(false)
+
+    const [selectedUnit, setSelectedUnit] = useState <unitType | null >(null)
+    const filteredPayments = payments.filter((payment)=> {
+        return payment.unitId === selectedUnit?.unitNumber})
+
+
 
     return(
         <div>
             {units.map((unit)=>{
+                    const filteredDebts =debts.filter((debt)=>{
+                        return debt.unitId === unit.unitNumber
+                })
                 return(
                     <div
                     key={unit.id}
@@ -16,8 +31,14 @@ function UnitCard(){
                         <div className="flex justify-between items-start border-b border-border pb-5" >
                             <div className="flex flex-col gap-0.5 ">
 
-                            <button onClick={()=>setEditForm(!showEditForm)}>✏️</button>
-                            <button onClick={()=>setShowPayment(!showPayment)}>📜</button>
+                            <button onClick={() => {
+    console.log(unit)
+    setSelectedUnit(unit)
+    setEditForm(true)
+}}>✏️</button>
+                            <button onClick={()=>{
+                                setSelectedUnit(unit)
+                                setShowPayment(!showPayment)}}>📜</button>
 
                             </div>
 
@@ -35,73 +56,49 @@ function UnitCard(){
                             <h3 className="text-text text-md font-semibold">: جمع بدهی</h3>
                         </div>
                         <div>
-                            {payments.map((payment)=>{
+                            {filteredDebts.map((debt)=>{
                                 return(
                                     <div
                                     className="flex justify-between text-xs py-5 border-t border-border text-right"
-                                    key={payment.id}>
-                                        <p>{payment.date}</p>
+                                    key={debt.id}>
+                                        <p>{debt.date}</p>
                                         <span className="flex gap-1">
                                             <p>تومان</p>
-                                            <p className=" text-danger">{payment.amount.toLocaleString()}</p>
+                                            <p className=" text-danger">{debt.amount.toLocaleString()}</p>
 
                                         </span>
-                                        <p className="w-20">{payment.title}</p>
+                                        <p className="w-20">{debt.title}</p>
                                      </div>
                                 )
                             })}
                         </div>
                         <div className="flex  justify-center items-center gap-2  mt-2">
-                            <button className=" bg-success px-3 py-1 rounded-md w-1/2"> ثبت پرداخت</button>
-                            <button className=" bg-danger px-3 py-1 rounded-md w-1/2">ثبت بدهی</button>
+                            <button
+                            className=" bg-success px-3 py-1 rounded-md w-1/2"> ثبت پرداخت</button>
+                            <button
+                            onClick={()=>{setDebtReg(!showDebtReg)
+                                setSelectedUnit(unit)}
+                            }
+                            className=" bg-danger px-3 py-1 rounded-md w-1/2">ثبت بدهی</button>
                         </div>
                     </div>
 
                 )
             })}
-            {showPayment && (
-                <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex flex-col justify-center items-center">
-                    <div className="w-2/3 space-y-3">
-                        <div className="flex justify-between items-center">
-                            <button  className="text-3xl active:text-red-600" onClick={()=>setShowPayment(!showPayment)}>×</button>
-                           <h2 className="font-semibold">تاریخچه پرداخت</h2>
-                        </div>
-                        <div className="bg-surface rounded-xl p-5 border border-border shadow-lg">
-                            {payments.map((payment)=>{
-                                return(
-                                    <div className="flex justify-between items-center py-2 border-b border-border last:border-0">
-                                        <p className="text-xs">{payment.date}</p>
-                                        <p>{payment.amount.toLocaleString()}</p>
-                                        <h2 className="w-22 text-right">{payment.title}</h2>
-                                    </div>
-                                )
-                            })}
-                        </div>
-
-
-
-
-
-                    </div>
-                </div>
-            )}
-            {showEditForm && (
-                <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex flex-col justify-center items-center">
-                    <div className="w-2/3 space-y-3">
-                        <div className="flex justify-between items-center ">
-                            <button className="text-3xl active:text-red-600" onClick={()=>setEditForm(!showEditForm)}>×</button>
-                            <h2 className="font-semibold"> ویرایش واحد</h2>
-                        </div>
-                        <form action="">
-                            <input type="text" />
-                            <input type="text" />
-                            <input type="text" />
-                            <button></button>
-                        </form>
-                    </div>
-                </div>
-                            )}
-
+                <PaymentHistoryModal
+                    showPayment={showPayment}
+                    filteredPayments={filteredPayments}
+                    setShowPayment={setShowPayment}
+            />
+                <DebtRegisterModal
+                    showDebtReg={showDebtReg}
+                    selectedUnit={selectedUnit}
+                    setDebtReg={setDebtReg}
+            />
+            <EditFormModel
+            showEditForm={showEditForm}
+            setEditForm={setEditForm}
+            selectedUnit={selectedUnit} />
         </div>
 
     )

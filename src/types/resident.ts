@@ -2,7 +2,9 @@
     id:number,
     title:string,
     amount:number,
-    date:string
+    date:string,
+    unitId:number
+
 }
   export type billsType ={
     id:number,
@@ -12,6 +14,7 @@
 }
  export type paymentsType ={
     id:number,
+    unitId:number,
     title:string,
     amount:number,
     date:string
@@ -28,4 +31,5 @@
     unitNumber:number,
     status:string,
     debt:number
+    residentCount:number
 }
